@@ -1,0 +1,22 @@
+package modulo5.enumeracoes;
+
+public class Carta {
+
+		private int numero;
+		private Naipe naipe;
+		
+		
+		public Carta(int numero) {
+			this.numero = numero;
+		}
+		
+		public Carta(int numero, Naipe naipe) {
+			this.numero = numero;
+			this.naipe = naipe.COPAS;
+					
+		}
+		
+		public void imprimirCarta() {
+			System.out.println("Sou " + numero + " de " + naipe);
+		}
+}

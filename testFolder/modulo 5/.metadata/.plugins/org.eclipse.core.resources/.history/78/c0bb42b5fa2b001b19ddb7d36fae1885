@@ -1,0 +1,6 @@
+package modulo5;
+
+public class Pessoa {
+	String nome;
+	int idade;
+}

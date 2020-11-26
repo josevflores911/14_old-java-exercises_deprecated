@@ -1,0 +1,10 @@
+package modulo5;
+
+public enum Naipe {
+	
+	OURO,
+	PAUS,
+	ESPADA,
+	COPAS;
+
+}

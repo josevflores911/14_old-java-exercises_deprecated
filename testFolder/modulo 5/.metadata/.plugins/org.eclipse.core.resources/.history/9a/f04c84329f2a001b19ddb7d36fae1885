@@ -1,0 +1,20 @@
+package modulo2AlgaWork;
+
+public class Carro {
+	
+	String fabricante;//atributos
+	String modelo;//string es un objeto no primitivo
+	String cor;
+	int anoDeFabricacao; 
+	
+	Propietario dono;
+	
+	void ligar() {
+		
+		
+			System.out.println("Ligando o carro: "+ modelo);	
+		
+		
+	}
+	
+}

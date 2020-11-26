@@ -1,0 +1,10 @@
+package grupo2.grupo;
+
+public class Sindico {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

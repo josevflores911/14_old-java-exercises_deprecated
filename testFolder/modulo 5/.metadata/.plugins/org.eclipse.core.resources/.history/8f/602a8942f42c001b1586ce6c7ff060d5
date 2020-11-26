@@ -1,0 +1,5 @@
+package modulo5.Heranca;
+
+public class Jogador extends Pessoa {
+
+}

@@ -1,0 +1,50 @@
+package challenge;
+
+public class ContaPagar extends Conta{
+	
+	//contructores
+	
+	public ContaPagar() {
+		
+	}
+	
+	ContaPagar(Fornecedor fornecedor, String descricao, double valor, String dataVencimento) {
+		this();
+		fornecedor = fornecedor;
+		descricao = descricao;
+		valor = valor;
+		dataVencimento = dataVencimento;
+	}
+	
+	
+	//metodos
+	public void pagar() {
+		
+		if(getSituacaoConta().equals(getSituacaoConta().CANCELADA)) {
+			System.out.println("Esta conta foi cancelada");
+		}else if(getSituacaoConta().equals(getSituacaoConta().PAGA)) {
+			System.out.println("Esta conta foi paga");
+		}else {
+			situacaoConta = SituacaoConta.PAGA;
+			
+			
+			//fornecedor como protected funciono
+			//getCosa() tambien funciona
+			System.out.println("-----PAGANDO------");
+			System.out.println("Fornecedor: " + fornecedor.getNome());
+			System.out.println("Descricao: " + getDescricao());
+			System.out.println("Valor: " + getValor());
+			System.out.println("Data de Vencimento: " + getDataVencimento());
+			System.out.println("--------------------------------");
+			
+		}
+			
+	}
+	
+	
+	}
+	
+	
+
+
+

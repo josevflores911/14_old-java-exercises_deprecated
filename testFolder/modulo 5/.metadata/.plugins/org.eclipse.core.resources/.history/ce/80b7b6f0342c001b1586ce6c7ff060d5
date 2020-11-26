@@ -1,0 +1,7 @@
+package grupo2;
+
+public class Edificio {
+	int pe = 10;
+	
+	System.out.println("hola");
+}

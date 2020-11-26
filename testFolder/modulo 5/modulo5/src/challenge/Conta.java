@@ -1,0 +1,112 @@
+package challenge;
+
+public abstract class Conta {
+	
+	//atributos
+	
+	//protected Fornecedor fornecedor;
+	//private Cliente cliente;
+	
+	private String descricao;
+	private double valor;
+	private String dataVencimento;
+	
+	protected SituacaoConta situacaoConta;
+	
+	//constructores
+	
+	public Conta(){
+		this.situacaoConta = situacaoConta.PENDENTE;
+	}
+	
+	
+	//metodos
+	
+	public abstract void exibirDetalhes();
+	
+	
+	
+	/*correcto
+	 public void cancelar() {
+		if (SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
+			System.out.println("Não pode cancelar uma conta que já foi paga: " 
+				+ this.getDescricao() + ".");
+		} else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
+			System.out.println("Não pode cancelar uma conta que já foi cancelada: " 
+				+ this.getDescricao() + ".");
+		} else {
+			System.out.println("Cancelando conta " + this.getDescricao() + ".");
+			
+			// altera situação da conta para CANCELADA
+			this.situacaoConta = SituacaoConta.CANCELADA;
+		}
+	}
+ */
+	
+	
+	 public void cancelar() {
+	
+		if(this.situacaoConta.equals(situacaoConta.CANCELADA)) {
+			System.out.println("Esta conta foi cancelada");
+		}else if(this.situacaoConta.equals(situacaoConta.PAGA)) {
+			System.out.println("Esta conta foi paga");
+		}else {
+			this.situacaoConta = situacaoConta.CANCELADA;
+			
+			System.out.println("-----CANCELANDO------");
+						
+		}
+	
+	}
+	 
+	
+	
+	
+	//getter & setter
+	
+	public SituacaoConta getSituacaoConta() {
+		return situacaoConta;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public String getDataVencimento() {
+		return dataVencimento;
+	}
+
+	public void setDataVencimento(String dataVencimento) {
+		this.dataVencimento = dataVencimento;
+	}
+	
+	/*
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}*/
+
+}

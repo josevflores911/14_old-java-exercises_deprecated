@@ -1,0 +1,10 @@
+package modulo2AlgaWork;
+
+public class Producto {
+	
+	void  definirPreco(double precoCusto) {
+	
+		precoCusto = precoCusto * 1.20;
+				
+	}
+}

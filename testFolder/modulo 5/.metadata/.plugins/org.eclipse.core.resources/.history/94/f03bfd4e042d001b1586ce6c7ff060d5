@@ -1,0 +1,104 @@
+package challenge;
+
+public class ContaPagar {
+	
+	private Fornecedor fornecedor;
+	
+	
+	private String descricao;
+	private double valor;
+	private String dataVencimento;
+	
+	private SituacaoConta situacaoConta;
+	
+	
+	
+	public ContaPagar() {
+		this.situacaoConta = situacaoConta.PENDENTE;
+	}
+	
+	ContaPagar(Fornecedor fornecedor, String descricao, double valor, String dataVencimento) {
+		this();
+		this.fornecedor = fornecedor;
+		this.descricao = descricao;
+		this.valor = valor;
+		this.dataVencimento = dataVencimento;
+	}
+	
+	
+	
+	public SituacaoConta getSituacaoConta() {
+		return situacaoConta;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public String getDataVencimento() {
+		return dataVencimento;
+	}
+
+	public void setDataVencimento(String dataVencimento) {
+		this.dataVencimento = dataVencimento;
+	}
+	
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+
+	public void pagar() {
+		
+		if(this.situacaoConta.equals(situacaoConta.CANCELADA)) {
+			System.out.println("Esta conta foi cancelada");
+		}else if(this.situacaoConta.equals(situacaoConta.PAGA)) {
+			System.out.println("Esta conta foi paga");
+		}else {
+			this.situacaoConta = situacaoConta.PAGA;
+			
+			System.out.println("-----PAGANDO------");
+			System.out.println("Fornecedor: " + this.fornecedor.getNome());
+			System.out.println("Descricao: " + this.descricao);
+			System.out.println("Valor: " + this.valor);
+			System.out.println("Data de Vencimento: " + this.dataVencimento);
+			System.out.println("--------------------------------");
+			
+		}
+			
+	}
+	
+	public void cancelar() {
+		
+		if(this.situacaoConta.equals(situacaoConta.CANCELADA)) {
+			System.out.println("Esta conta foi cancelada");
+		}else if(this.situacaoConta.equals(situacaoConta.PAGA)) {
+			System.out.println("Esta conta foi paga");
+		}else {
+			this.situacaoConta = situacaoConta.CANCELADA;
+			
+			System.out.println("-----CANCELANDO------");
+						
+		}
+	}
+	
+	
+
+
+}

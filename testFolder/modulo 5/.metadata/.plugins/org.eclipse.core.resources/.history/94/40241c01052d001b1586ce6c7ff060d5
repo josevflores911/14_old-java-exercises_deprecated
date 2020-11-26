@@ -1,0 +1,71 @@
+package challenge;
+
+import static challenge.SituacaoConta.CANCELADA;
+
+public class ContaReceber extends Conta {
+	
+	//constructores
+	public ContaReceber() {
+		
+	}
+	
+	public ContaReceber(Cliente cliente, String descricao, double valor, String dataVencimento) {
+		this();
+		cliente = cliente;
+		descricao = descricao;
+		valor = valor;
+		dataVencimento = dataVencimento;
+	}
+	
+	//metodos
+	public void cancelar() {
+		
+		super.cancelar();
+		
+		getSituacaoConta();
+		if(getSituacaoConta().equals(SituacaoConta.CANCELADA)) {
+			
+			System.out.println("Esta conta foi cancelada");
+			
+		} else {
+			
+			getSituacaoConta();
+			if(getSituacaoConta().equals(SituacaoConta.PAGA)) {
+				
+				System.out.println("Esta conta foi paga");
+				
+			}else if(getValor()<50000){
+
+				situacaoConta = CANCELADA;
+				System.out.println("-----CANCELANDO------");
+							
+			}else {
+				System.out.println("No podemos cancelar cuentas acima de 50000$");
+			}
+		}
+	}
+	
+	
+	public void receber() {
+		if(getSituacaoConta().equals(getSituacaoConta().CANCELADA)) {
+			System.out.println("Esta conta foi cancelada");
+		}else if(getSituacaoConta().equals(getSituacaoConta().PAGA)) {
+			System.out.println("Esta conta foi paga");
+		}else {
+			situacaoConta = SituacaoConta.PAGA;
+			
+			
+			//fornecedor como protected funciono
+			//getCosa() tambien funciona
+			System.out.println("-----RECEBENDO------");
+			System.out.println("Fornecedor: " + getCliente().getNome());
+			System.out.println("Descricao: " + getDescricao());
+			System.out.println("Valor: " + getValor());
+			System.out.println("Data de Vencimento: " + getDataVencimento());
+			System.out.println("--------------------------------");
+			
+		}
+		
+	}
+
+}
