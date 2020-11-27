@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="caixaInterfases.Compra"/>
+    <fullyQualifiedTypeName name="caixaInterfases.Checkout"/>
+    <fullyQualifiedTypeName name="pagamentoInterfases.Cartao"/>
+    <fullyQualifiedTypeName name="pagamentoInterfases.Autorizavel"/>
+    <fullyQualifiedTypeName name="pagamentoInterfases.Operadora"/>
+    <fullyQualifiedTypeName name="pagamento.operadoras.Cielo"/>
+    <fullyQualifiedTypeName name="impressaoInterfases.Imprimivel"/>
+    <fullyQualifiedTypeName name="impressaoInterfases.Impresora"/>
+    <fullyQualifiedTypeName name="impresao.impresoras.ImpresoraEpson"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+</qualifiedTypeNameHistroy>
