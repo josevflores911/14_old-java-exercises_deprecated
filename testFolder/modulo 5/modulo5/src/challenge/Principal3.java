@@ -1,5 +1,7 @@
 package challenge;
 
+
+
 public class Principal3 {
 
 	public static void main(String[] args) {
@@ -38,12 +40,31 @@ public class Principal3 {
 			53200d, "13/05/2012");
 		
 		// pagamento e cancelamento de contas a pagar
-		contaPagar1.pagar();
-		contaPagar2.cancelar();
+		try {
+			contaPagar1.pagar();
+		}catch(AlreadyPayedException e){
+			System.out.println("aqui 1");
+		}
+		
+		try {
+			contaPagar2.cancelar();
+		}catch(CancelDebtException e){
+			System.out.println("aqui 3");
+		}
 
 		// recebimento e cancelamento de contas a receber
-		contaReceber1.receber();
-		contaReceber2.cancelar();
+		try {
+			contaReceber1.receber();
+		}catch(AlreadyPayedException e){
+			System.out.println("aqui 2");
+		}
+		
+		
+		try {
+			contaReceber2.cancelar();
+		}catch(CancelDebtException e){
+			System.out.println("cuenta muy alta para ser cancelada");
+		}
 	}
 
 }

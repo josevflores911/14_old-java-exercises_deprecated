@@ -44,12 +44,16 @@ public abstract class Conta {
  */
 	
 	
-	 public void cancelar() {
+	 public void cancelar() throws CancelDebtException {
 	
 		if(this.situacaoConta.equals(situacaoConta.CANCELADA)) {
-			System.out.println("Esta conta foi cancelada");
+			
+			throw new CancelDebtException("Esta conta foi cancelada");
+			//System.out.println("Esta conta foi cancelada");
 		}else if(this.situacaoConta.equals(situacaoConta.PAGA)) {
-			System.out.println("Esta conta foi paga");
+			
+			throw new CancelDebtException("Esta conta foi paga");
+			//System.out.println("Esta conta foi paga");
 		}else {
 			this.situacaoConta = situacaoConta.CANCELADA;
 			

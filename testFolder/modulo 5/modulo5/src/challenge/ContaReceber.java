@@ -66,20 +66,26 @@ public class ContaReceber extends Conta {
 	}
 	*/
 	
-	public void cancelar() {
+	public void cancelar() throws CancelDebtException {
 		if (this.getValor() > 50000d) {
-			System.out.println("Essa conta a receber não pode ser cancelada. " +
-				"É muito dinheiro para deixar de receber: " + this.getDescricao());
+			
+			throw new CancelDebtException("Essa conta a receber não pode ser cancelada." + "É muito dinheiro para deixar de receber: " + this.getDescricao());
+			//System.out.println("Essa conta a receber não pode ser cancelada. " +
+				//"É muito dinheiro para deixar de receber: " + this.getDescricao());
 		} else {
 			super.cancelar();
 		}
 	}
 	
-	public void receber() {
+	public void receber() throws AlreadyPayedException {
 		if(getSituacaoConta().equals(getSituacaoConta().CANCELADA)) {
-			System.out.println("Esta conta foi cancelada");
+			
+			throw new AlreadyPayedException("Esta conta foi cancelada");
+			//System.out.println("Esta conta foi cancelada");
 		}else if(getSituacaoConta().equals(getSituacaoConta().PAGA)) {
-			System.out.println("Esta conta foi paga");
+			
+			throw new AlreadyPayedException("Esta conta foi paga");
+			//System.out.println("Esta conta foi paga");
 		}else {
 			situacaoConta = SituacaoConta.PAGA;
 			

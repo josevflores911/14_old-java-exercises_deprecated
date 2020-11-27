@@ -1,5 +1,7 @@
 package challenge;
 
+
+
 public class ContaPagar extends Conta{
 	
 	//adicione del solucionario
@@ -38,12 +40,16 @@ public class ContaPagar extends Conta{
 		System.out.println("Descricao: " + this.getDescricao() );
 	}
 	
-	public void pagar() {
+	public void pagar() throws AlreadyPayedException  {
 		
 		if(getSituacaoConta().equals(getSituacaoConta().CANCELADA)) {
-			System.out.println("Esta conta foi cancelada");
+			
+			throw new AlreadyPayedException("Esta conta foi cancelada");
+			//System.out.println("Esta conta foi cancelada");
 		}else if(getSituacaoConta().equals(getSituacaoConta().PAGA)) {
-			System.out.println("Esta conta foi paga");
+			
+			throw new AlreadyPayedException("Esta conta foi paga");
+			//System.out.println("Esta conta foi paga");
 		}else {
 			situacaoConta = SituacaoConta.PAGA;
 			
