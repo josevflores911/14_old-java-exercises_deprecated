@@ -1,0 +1,6 @@
+jose@jose.com
+maria@maria.com
+ricardo@ricardo.com
+jose2@jose.com
+maria2@maria.com
+ricardo2@ricardo.com
